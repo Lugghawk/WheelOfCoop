@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="javascripts/session.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div ng-controller="SessionCtrl">
+    	<form ng-submit="newSession()">
+    		<input type="submit" class="new-session-btn" value="New Session"/>
+    	</form>
+    	<span>Current Session Id: {{session_id || 'None'}}</span>
+    </div>
+  </body>
+</html>
