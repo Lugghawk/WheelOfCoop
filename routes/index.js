@@ -4,7 +4,15 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Wheel Of Co-Op' });
+	var steam_return = null;
+	console.log ('session.passport = ' + req.session.passport);
+	console.log('session.passport.user = ' + req.session.passport.user)
+	if (req.session.passport != undefined && req.session.passport.user != undefined){
+		steam_return = req.session.passport.user.identifier
+		console.log('user signed in as:'+ steam_return);
+	}
+  res.render('index', { title: 'Wheel Of Co-Op', steam_id:steam_return });
+  console.log(req.session);
 };
 
 var count_session = 0;

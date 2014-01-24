@@ -14,7 +14,9 @@
     	<form ng-submit="newSession()">
     		<input type="submit" class="new-session-btn" value="New Session"/>
     	</form>
-    	<span>Current Session Id: {{session_id || 'None'}}</span>
+    	<span>Current Session Id: {{session_id || 'None'}}</span><br/>
+    	<span>steam_id = {{steam_id}}</span><br/>
+    	<span ng-if="steam_id != null">Logged in with steam_id: {{steam_id}}</span>
     </div>
   </body>
 </html>
